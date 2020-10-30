@@ -1,0 +1,21 @@
+<div class="card">
+　　　<%#下記試し%>
+  <%#= link_to image_tag(prototype.image, class: :card__img ), prototype_path(prototype.id). method: :get %>
+    <%#上記試し%>
+  <%= link_to image_tag(prototype.image, class: :card__img ), prototype_path(prototype.id) %>
+  <div class="card__body">
+　　　<%#下記試し%>
+   <%#= link_to prototype.title, prototype_path(prototype.id). method: :get, class: :card__title%>
+   <%#= link_to "prototype.title", prototype_path, class: :card__title %>
+   　<%#上記試し%>
+   <%= link_to prototype.title, prototype_path(prototype.id), class: :card__title %>
+    <p class="card__summary">
+      <%= prototype.catch_copy %>
+    </p>
+　　　　<%#下記試し%>
+    <%#= link_to "by #{prototype.user.name}", "/users/#{prototype.user_id}", class: :card__user %>
+      <%#上記試し%>
+    <%= link_to "by #{prototype.user.name}", prototype_path(prototype.id), class: :card__user %>
+    <%# user_path(current_user.id)と間違えないように注意 %>
+  </div>
+</div>
